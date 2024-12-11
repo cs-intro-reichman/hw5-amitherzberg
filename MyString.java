@@ -47,27 +47,14 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-         
-        if (str1.isEmpty()) {
-            return true;
-        }
-    
-        int index1 = 0; 
-        int index2 = 0; 
 
-        while (index2 < str2.length()) {
-            if (str1.charAt(index1) == str2.charAt(index2)) {
-                index1++;
+        for (int i = 0; i < str1.length(); i++){
+            if (countChar(str1, str1.charAt(i)) > countChar(str2, str1.charAt(i))){
+                return false;
             }
-
-            if (index1 == str1.length()) {
-                return true;
-            }
-
-            index2++;
         }
 
-        return false;
+        return true;
     }
 
     /** Returns a string which is the same as the given string, with a space
