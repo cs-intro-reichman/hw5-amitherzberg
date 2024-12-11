@@ -123,9 +123,9 @@ public class Scrabble {
 				if (!isWordInDictionary(input)){
 					System.out.println("No such word in the dictionary. Try again.");
 				} else {
-					score += Scrabble.wordScore(input);
-				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
-				MyString.remove(hand, input);
+					score += wordScore(input);
+					hand = MyString.remove(hand, input);
+					System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
 				}
 			}
 		}
